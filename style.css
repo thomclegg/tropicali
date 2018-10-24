@@ -1,4 +1,17 @@
 body {
   background-color: #f70201;
   color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.wrapper {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
