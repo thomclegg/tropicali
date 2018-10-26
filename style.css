@@ -415,11 +415,11 @@ body {
   background-color: #002ab8;
   color: #fff;
   width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
 }
 
 .wrapper {
@@ -428,6 +428,11 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+@media (max-width: 425px) {
+  .wrapper {
+    width: 80%;
+  }
 }
 
 h1 {
