@@ -1,0 +1,25 @@
+{
+  "name": "tropicali",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomclegg/tropicali.git"
+  },
+  "author": "Tom Clegg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomclegg/tropicali/issues"
+  },
+  "homepage": "https://github.com/thomclegg/tropicali#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.10.0"
+  }
+}
