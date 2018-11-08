@@ -1,12 +1,16 @@
 
 @import "type";
 
+// set object specific values for things like colour, font, width, height etc which
+// can then be re-used and changed globally. 
+
 $primary-color: #eee;
 $main-font: "Open Sans";
 $mid-screen: 1040px;
 $small-screen: 425px;
 
-// creates a streamlined media query which can be re-used easily
+// creates a streamlined media query which can be re-used easily for individual elements
+// divs, sections etc - set width above then nest within individual rules.
 
 @mixin mq($width) {
   @media (max-width: $width) {
@@ -15,6 +19,7 @@ $small-screen: 425px;
 }
 
 // creates a mixin for perfectly centering items on a page - can be reused easily
+// use instead of adding multiple classes in the html
 
 @mixin dead-center () {
   display: flex;
