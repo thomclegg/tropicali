@@ -2,12 +2,13 @@
 @import "type";
 
 // set object specific values for things like colour, font, width, height etc which
-// can then be re-used and changed globally. 
+// can then be re-used and changed globally.
 
-$primary-color: #eee;
+$primary-color: #deb39b;
 $main-font: "Open Sans";
 $mid-screen: 1040px;
 $small-screen: 425px;
+$font-color: #425365;
 
 // creates a streamlined media query which can be re-used easily for individual elements
 // divs, sections etc - set width above then nest within individual rules.
@@ -42,7 +43,7 @@ body {
 }
 
 .wrapper {
-  width: 50%;
+  width: 40%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -55,8 +56,10 @@ body {
 
 h1 {
   font-size: 3em;
+  color: $font-color;
 }
 
 p {
   line-height: 1.4;
+  color: $font-color;
 }
