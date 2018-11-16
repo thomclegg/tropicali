@@ -1,17 +1,32 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var cleanCss = require('gulp-clean-css')
+var postCss = require('gulp-postcss')
+
+var concat = require('gulp-concat')
 
 var browserSync = require('browser-sync').create()
 
 var imagemin = require("gulp-imagemin")
 
 
-sass.compiler = require('node-sass')
 
-gulp.task("sass", function() {
-  return gulp.src("src/css/style.scss")
-    .pipe(sass())
+gulp.task("css", function() {
+  return gulp.src([
+      "src/css/type.css",
+      "src/css/style.css"
+  ])
+  .pipe(
+    postCss([
+      require("autoprefixer"),
+      require("postcss-preset-env")({
+        stage: 1,
+        browsers: ["IE 11", "last 2 versions"]
+      })
+    ])
+  )
+
+  .pipe(concat('style.css'))
+
     .pipe(cleanCss({
       compatibility: 'ie8'
     })
@@ -46,11 +61,11 @@ gulp.task("watch", function() {
 
 
   gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
-  gulp.watch("src/css/style.scss", ["sass"])
+  gulp.watch("src/css/style.css", ["css"])
   gulp.watch("src/fonts/*", ["fonts"])
   gulp.watch("src/img/*", ["images"])
 
 })
 
 
-gulp.task('default', ["html", "sass", "fonts", "images", "watch"])
+gulp.task('default', ["html", "css", "fonts", "images", "watch"])
