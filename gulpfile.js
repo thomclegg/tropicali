@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var cleanCss = require('gulp-clean-css')
 var postCss = require('gulp-postcss')
 
+var sourceMaps = require('gulp-sourcemaps')
+
 var concat = require('gulp-concat')
 
 var browserSync = require('browser-sync').create()
@@ -12,9 +14,11 @@ var imagemin = require("gulp-imagemin")
 
 gulp.task("css", function() {
   return gulp.src([
+      "src/css/reset.css",
       "src/css/type.css",
       "src/css/style.css"
   ])
+  .pipe(sourceMaps.init())
   .pipe(
     postCss([
       require("autoprefixer"),
@@ -31,6 +35,7 @@ gulp.task("css", function() {
       compatibility: 'ie8'
     })
   )
+    .pipe(sourceMaps.write())
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream())
 })
@@ -61,7 +66,7 @@ gulp.task("watch", function() {
 
 
   gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
-  gulp.watch("src/css/style.css", ["css"])
+  gulp.watch("src/css/*", ["css"])
   gulp.watch("src/fonts/*", ["fonts"])
   gulp.watch("src/img/*", ["images"])
 

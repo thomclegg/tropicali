@@ -25,6 +25,7 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.10.0",
     "postcss-preset-env": "^6.4.0"
   }
